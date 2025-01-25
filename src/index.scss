@@ -1,0 +1,235 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Barlow+Condensed:wght@300;400;600&display=swap');
+
+//General Nav style
+
+div.first-section{
+  position:relative;
+  z-index: 1;
+  padding-top: 20px;
+  div.hamburger{
+    display: none;
+  }
+  .close-btn{
+    display: none;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div.logo{
+    width:180px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    .flex{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  div.nav{
+    width: 65%;
+    height: 100px;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(58, 58, 80, 0.3);
+    padding: 25px;
+    ul{
+      font-family: "Montserrat", serif;
+      line-height: normal;
+      li{
+        float: left;
+        margin: 0px 10px;
+        list-style-type: none;
+      }
+      li a{
+        text-decoration: none;
+        color:white;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 200;
+      }
+      li a:hover{
+        padding-bottom: 30px;
+        border-bottom: 4px solid white;
+      }
+    }
+  }
+}
+
+
+section.home-section{
+  background-image: url("./assets/home/background-home-desktop.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height:100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding-top: 13vh;
+  div.second-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: rgb(168, 166, 175);
+    font-family:  "Montserrat", serif;
+    margin-top: 25vh;
+      div.space{
+        display: flex;
+        flex: 1 1 0%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        div{
+          max-width: 400px;
+        }
+        flex: 1 1 0%;
+        padding: 20px;
+       p:first-child{
+        font-size: 25px;
+        margin-bottom: 5px;
+       }
+       h1{
+        font-size: 100px;
+        margin-bottom: 5px;
+        color: white;
+      }
+      p:last-child{
+        text-align: center;
+        font-size: 15px;
+        line-height: 30px;
+      }
+      }
+
+      div.explore{
+        flex: 1 1 0%;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div{
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background-color: white;
+          // text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+      }
+      
+    
+
+  }
+}
+
+@media screen and (max-width:800px) {
+//General Nav style
+div.first-section{
+  div.logo{
+    width: 90px;
+  }
+
+  div.nav{
+    width:75%;
+
+    ul{
+      li{
+        margin: 0px 10px;
+      }
+      li a{
+        font-size: 15px;
+      }
+      li a b{
+        display: none;
+      }
+
+    }
+  }
+}
+  section.home-section{
+    background-image: url("../src/assets/home/background-home-mobile.jpg");
+    min-height:140%;
+    div.second-div{
+      margin-top: 10vh;
+      flex-direction: column;
+
+      div.space{
+        margin-bottom: 15vh;
+      }
+      div.explore{
+        margin-bottom: 10vh;
+      }
+    }
+  }
+
+
+}
+
+@media screen and (max-width:600px) {
+
+  // General Nav style
+  div.first-section{
+    padding: 20px;
+
+    div.nav{
+      display: none;
+      width: 70%;
+      height: 100vh;
+      position: fixed;
+      right: 0;
+      top: 0;
+      background-color: rgba(13, 13, 28);
+      ul{
+        margin: 7vh 0px 0px;
+        li {
+          float: none;
+          font-size: 50px;
+        }
+        li a:hover{
+          padding-bottom: 15px;
+        }
+      }
+ 
+    }
+    div.nav.active{
+      display: block;
+    }
+    div.hamburger{
+      display: block;
+    }
+    .close-btn{
+      display: block;
+      z-index: 1;
+      position: fixed;
+      right: 30px;
+    }
+  }
+  
+  section.home-section{
+
+    div.second-div{
+      div.space{
+        padding: 10px;
+        div{
+          width: 100%;
+          h1{
+            font-size: 90px;
+          }
+        }
+      }
+    }
+  }
+}
