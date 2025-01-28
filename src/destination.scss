@@ -38,7 +38,10 @@ section.destination-section{
             div.flex-gap{
                 display: flex;
                 gap: 20px;
-
+                p.active{
+                    padding-bottom: 10px;
+                    border-bottom: 2px solid white;
+                }
                 p {
                     padding-bottom: 10px;
                     a{
@@ -47,9 +50,6 @@ section.destination-section{
                         text-transform: uppercase;
                     } 
                 }
-                p:hover{
-                     border-bottom: 2px solid white;
-                   }
             }
             h1{
                 font-size: 90px;

@@ -2,41 +2,64 @@ import logo from '../assets/shared/logo.svg';
 import iconHamburger from '../assets/shared/icon-hamburger.svg';
 import closeBtn from '../assets/shared/icon-close.svg';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
+
 const Nav = () => {
     const [isNav,setIsNav] = useState(false);
+    const location = useLocation();
+
     const handleNavDisplay = () => {
         setIsNav(true);
     }
     const handleNavClose = () => {
         setIsNav(false);
     };
+    const navItems = [
+        { name: "Home", path: "/" },
+        { name: "Destination", path: "/destination" },
+        { name: "Crew", path: "/crew" },
+        { name: "Technology", path: "/technology" },
+    ];
+
+    const navVariants = {
+        open: { opacity: 1 },
+        closed: {  opacity: 0 },
+        
+    };
+
     return (
         <>
         <div className='first-section'>
-                        <div className='logo'>
+                        <div  className='logo'>
                             <div className='flex'>
                                 <a href="/">
                                   <img src={logo} alt="logo" />
                                 </a> 
                             </div>
                         </div>
-
-                         
-                            {/* {isNav && ( */}
-                                <div className={`nav ${isNav ? 'active' : ''}`}>
-                                    <ul className='nav'>
-                                        <li><a href="/"> <b>00 </b> Home </a></li>
-                                        <li><a href="/destination"> <b>01 </b> Destination</a></li>
-                                        <li><a href="/crew"><b>02 </b> Crew</a></li>
-                                        <li><a href="/technology"><b>03 </b> Technology</a></li>
+                        
+                               <div
+                                className={`nav ${isNav ? 'active' : ''}`}>
+                                    <ul  className='nav'>
+                                      {navItems.map((item, index) => (
+                                            <li >
+                                                <a
+                                                    key={index}
+                                                    className={location.pathname === item.path ? "active" : ""}
+                                                    href={item.path}>
+                                                <b>0{index} </b> {item.name}
+                                                </a>
+                                            </li>
+                                        ))} 
                                     </ul>
-                                </div>    
-                              {/* )}  */}
+                                </div>  
+ 
                     {/* hamburger icon */}
                       <div className='hamburger'>
                             <div className='center'>
-                                <a href="#">
-                                  <img src={iconHamburger} onClick={handleNavDisplay} alt="logo" width={35} height={35}/>
+                                <a href="#" onClick={handleNavDisplay} >
+                                  <img src={iconHamburger}alt="logo" width={35} height={35}/>
                                 </a> 
                             </div>
                         </div>

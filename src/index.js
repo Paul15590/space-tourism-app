@@ -11,17 +11,18 @@ import Destination from './pages/Destination';
 import Crew from './pages/Crew';
 import Tech from './pages/Tech';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
-        <Routes>
-            <Route element={ <GeneralLayout />}>
-                <Route path='/' element={ <Home/>}> </Route>
-                <Route path='destination' element={ <Destination />}></Route>
-                <Route path='crew' element={ <Crew />}></Route>
-                <Route path='technology' element={ <Tech />}></Route>
-            </Route>
-        </Routes>
-    </BrowserRouter>
+        <BrowserRouter>
+            <Routes>
+                <Route element={ <GeneralLayout />}>
+                    <Route path='/' element={ <Home/>}> </Route>
+                    <Route path='destination' element={ <Destination />}></Route>
+                    <Route path='crew' element={ <Crew />}></Route>
+                    <Route path='technology' element={ <Tech />}></Route>
+                </Route>
+            </Routes>
+        </BrowserRouter>
 );
 

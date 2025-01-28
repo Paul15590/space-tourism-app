@@ -3,6 +3,7 @@ import techImage2 from '../assets/technology/image-spaceport-portrait.jpg';
 import techImage3 from '../assets/technology/image-space-capsule-portrait.jpg';
 import data from '../data.json';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const imageMap = {
     "Launch vehicle":techImage1,
@@ -20,14 +21,24 @@ const Tech = () => {
     const techData = data.technology[techIndex];
 
     return (
-        <section className="tech-section">
-            <h1 className='heading'> <span>03 </span> SPACE LAUNCH 101</h1>
+        <motion.section 
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            transition={{ duration:1}}
+            className="tech-section">
+
+            <motion.h1 
+                initial={{x:"-100%"}}
+                animate={{x:0}}
+                transition={{delay:1}}
+                className='heading'> <span>03 </span> SPACE LAUNCH 101</motion.h1>
 
             <div className="div-flex">
                 <div className='flex'>
-                    <div>
+                 <div>
                     {data.technology.map(( _, index) => (
-                            <div
+                            <div 
+                                className={`${techIndex === index ? "active": ""}`}
                                 key={index}
                                 onClick={() => handleClick(index)}
                             > {index + 1}</div>
@@ -42,10 +53,16 @@ const Tech = () => {
                 </div>
 
                 <div className='image'>
-                    <img src={imageMap[techData.name]} alt={techData.name} />
+                    <motion.img 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8 }}
+                        key={techData.name}
+                        src={imageMap[techData.name]}
+                        alt={techData.name} />
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }
 

@@ -36,6 +36,10 @@ section.tech-section{
             max-width: 500px;
             width: 100%;
             div:first-child{
+                div.active{
+                    background-color: white;
+                    color: black;
+                }
                 div{
                     width: 60px;
                     height: 60px;
@@ -48,10 +52,6 @@ section.tech-section{
                     margin: 20px 0px;
                     cursor: pointer;
                     font-size: 25px;
-                }
-                div:hover{
-                    background-color: white;
-                    color: black;
                 }
             }
 

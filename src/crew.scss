@@ -54,15 +54,15 @@ section.crew-section{
             div.radio-box{
                     display: flex;
                     gap: 20px;
+                    div.active{
+                        background-color: white;
+                    }
                 div{
                     width: 15px;
                     height: 15px;
                     border-radius: 50%;
                     background-color:rgb(103, 100, 113);
                     cursor: pointer;
-                }
-                div:hover{
-                    background-color: white;
                 }
             }
         }

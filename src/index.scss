@@ -51,6 +51,10 @@ div.first-section{
         margin: 0px 10px;
         list-style-type: none;
       }
+      li a.active{
+        padding-bottom: 30px;
+        border-bottom: 4px solid white;
+      }
       li a{
         text-decoration: none;
         color:white;
@@ -183,7 +187,7 @@ div.first-section{
   // General Nav style
   div.first-section{
     padding: 20px;
-
+  
     div.nav{
       display: none;
       width: 70%;
@@ -197,6 +201,9 @@ div.first-section{
         li {
           float: none;
           font-size: 50px;
+        }
+        li a.active{
+          padding-bottom: 15px;
         }
         li a:hover{
           padding-bottom: 15px;

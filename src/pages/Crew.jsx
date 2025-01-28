@@ -4,6 +4,7 @@ import imageMark from '../assets/crew/image-mark-shuttleworth.png';
 import imageVictor from '../assets/crew/image-victor-glover.png';
 import data from '../data.json';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const imageMap = {
     "Anousheh Ansari": imageAnsari,
@@ -22,8 +23,17 @@ const Crew = () => {
     const crewData = data.crew[crewIndex];
       
     return (
-        <section className="crew-section">
-            <h1 className='heading'><span>02</span> MEET YOUR CREW</h1>
+        <motion.section
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            transition={{ duration:1}}
+
+        className="crew-section">
+            <motion.h1 
+            initial={{x:"-100%"}}
+            animate={{x:0}}
+            transition={{delay:1}}
+            className='heading'><span>02</span> MEET YOUR CREW</motion.h1>
 
             <div className="div-flex">
                 <div className='info'>
@@ -36,6 +46,7 @@ const Crew = () => {
                     <div className='radio-box'>
                         {data.crew.map(( _, index) => (
                             <div
+                                className={`${crewIndex === index ? "active":""}`}
                                 key={index}
                                 onClick={() => handleCrewClick(index)}
                             ></div>
@@ -44,10 +55,15 @@ const Crew = () => {
                 </div>
 
                 <div className='image'>
-                    <img src={imageMap[crewData.name]} alt={crewData.name}/>
+                    <motion.img 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8 }}
+                        key={crewData.name}
+                     src={imageMap[crewData.name]} alt={crewData.name}/>
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }
 
